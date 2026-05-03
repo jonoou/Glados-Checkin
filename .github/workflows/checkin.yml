@@ -25,5 +25,5 @@ jobs:
       - name: Run checkin
         run: python glados.py
         env:
-          WECHAT_WEBHOOK: ${{ secrets.WECHAT_WEBHOOK }}
+          QYWX_KEY: ${{ secrets.WECHAT_WEBHOOK }}
           GLADOS_COOKIES: ${{ secrets.GLADOS_COOKIES }}
