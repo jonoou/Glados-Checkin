@@ -23,7 +23,7 @@ jobs:
           pip install requests
 
       - name: Run checkin
-        run: python checkin.py
+        run: python glados.py
         env:
           WECHAT_WEBHOOK: ${{ secrets.WECHAT_WEBHOOK }}
           GLADOS_COOKIES: ${{ secrets.GLADOS_COOKIES }}
