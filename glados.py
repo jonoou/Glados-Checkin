@@ -53,9 +53,9 @@ EXCHANGE_POINTS = {"plan100": 100, "plan200": 200, "plan500": 500}
 
 # Load sendNotify
 def load_send():
-    cur_path = f"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key="
+    cur_path = os.path.abspath(os.path.dirname(__file__))
     sys.path.append(cur_path)
-    if os.path.exists(cur_path + os.environ.get(WECHAT_WEBHOOK)):
+    if os.path.exists(cur_path + "/sendNotify.py"):
         try:
             from sendNotify import send
             return send
