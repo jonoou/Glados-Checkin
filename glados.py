@@ -29,6 +29,7 @@ logger = logging.getLogger(__name__)
 # ENVIRONMENT
 ENV_COOKIES = "GLADOS_COOKIES"
 ENV_EXCHANGE_PLAN = "GLADOS_EXCHANGE_PLAN"
+WECHAT_WEBHOOK = "WECHAT_WEBHOOK"
 
 # API URLs
 CHECKIN_URL = "https://glados.cloud/api/user/checkin"
@@ -54,7 +55,7 @@ EXCHANGE_POINTS = {"plan100": 100, "plan200": 200, "plan500": 500}
 def load_send():
     cur_path = f"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key="
     sys.path.append(cur_path)
-    if os.path.exists(cur_path + "os.environ["WECHAT_WEBHOOK"]"):
+    if os.path.exists(cur_path + os.environ.get(WECHAT_WEBHOOK)):
         try:
             from sendNotify import send
             return send
