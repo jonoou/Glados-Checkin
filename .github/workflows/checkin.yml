@@ -2,8 +2,8 @@ name: GLaDOS Checkin
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '15 2 * * *'
+#  schedule:
+#    - cron: '15 2 * * *'
 
 jobs:
   checkin:
